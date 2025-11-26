@@ -58,6 +58,7 @@ int main(int argc, char* argv[]) {
 int handle_command(const std::vector<std::string>& args) {
 	if (args.size() < 2) {
 		std::cerr << "Error: Not enough arguments provided." << std::endl;
+		show_help();
 		return 1;
 	}
 
