@@ -2,9 +2,7 @@
 #include <string>
 #include <vector>
 
-// Forward declarations
 void show_help(const std::string &command = "");
-// Forward declaration f the main command handler function
 int handle_command(const std::vector<std::string> &args);
 
 void show_help(const std::string &command) {
@@ -22,7 +20,6 @@ void show_help(const std::string &command) {
     std::cout << "                This changes the initial tracking status.\n";
   } else {
     // Default (main) help message
-
     std::cout << "Jobless CLI - Job Application Tracker\n";
     std::cout << "=====================================\n";
     std::cout << "\n";
@@ -69,5 +66,16 @@ int handle_command(const std::vector<std::string> &args) {
   const std::string &main_command = args[0];
   const std::string &subcommand = args[1];
 
+  if (main_command == "new") {
+    if (subcommand == "jobsearch") {
+      bool with_job = false;
+
+      for (size_t i = 2; i < args.size(); i++) {
+        if (args[i] == "--with-job") {
+          with_job = true;
+        }
+      }
+    }
+  }
   return 0;
 }
