@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sqlite3.h>
 
 void show_help(const std::string &command = "");
 int handle_command(const std::vector<std::string> &args);
