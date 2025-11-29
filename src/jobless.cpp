@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   for (int i = 1; i < argc; ++i) {
     args.push_back(argv[i]);
   }
-  
+
   int status = handle_command(args);
   return status;
 }
@@ -24,5 +24,22 @@ int handle_command(const std::vector<std::string> &args) {
   const std::string &main_command = args[0];
   const std::string &subcommand = args[1];
 
+
   return 0;
+}
+
+
+// NOTE(unused): When stable, integrate with other changes.
+int add(const std::vector<std::string> &args) {
+  // Here we have only several options to add.
+  // Interactive and Single Line
+
+  const std::string &companyName = args[0];
+
+  const std::string &jobTitle = args[1];
+  const std::string &jobDescription = args[2];
+  const std::string &jobType = args[3];
+  const std::string &jobUrl = args[4];
+  
+  
 }
